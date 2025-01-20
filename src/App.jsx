@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import {Routes, Route} from 'react-router-dom';
+import React, {useContext, } from 'react';
+import {Routes, Route, Navigate} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
@@ -11,8 +11,8 @@ import {AuthContext} from './context/AuthContext';
 
 function App() {
 
-//const {isAuth} = useContext(AuthContext);
-// console.log(isAuth);
+const {isAuth} = useContext(AuthContext);
+console.log(isAuth);
 
 
     return (
@@ -21,7 +21,10 @@ function App() {
                 <NavBar/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
+                    <Route
+                        path="/profile"
+                        element={isAuth ? <Profile/> : <Navigate to="/SignIn" />}
+                        />
                     <Route path="/signin" element={<SignIn/>}/>
                     <Route path="/signup" element={<SignUp/>}/>
                 </Routes>
