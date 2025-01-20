@@ -17,30 +17,18 @@ const {isAuth} = useContext(AuthContext);
 
     return (
         <>
-        <NavBar/>
-        <div className="content">
-            {isAuth === true ?
-            (
-                <button>uitloggen</button>
-            )
-                :
-                (
-                    <>
-                        <button>Inloggen</button>
-                        <button>registreren</button>
-                    </>
-                )}
-
+            <div className="content">
+                <NavBar/>
                 <Routes>
-                <Route path="/" element={<Home/>}/>
-            <Route path="/profile" element={<Profile/>}/>
-            <Route path="/signin" element={<SignIn/>}/>
-            <Route path="/signup" element={<SignUp/>}/>
-        </Routes>
-        </div>
-</>
-)
-    ;
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/profile" element={<Profile/>}/>
+                    <Route path="/signin" element={<SignIn/>}/>
+                    <Route path="/signup" element={<SignUp/>}/>
+                </Routes>
+            </div>
+        </>
+    )
+        ;
 }
 
 export default App;

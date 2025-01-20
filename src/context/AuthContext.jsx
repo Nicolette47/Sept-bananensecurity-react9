@@ -12,7 +12,6 @@ export function AuthContextProvider({children}) {
 
 
 
-
     const data = {
         isAuth: isAuth,
         toggleIsAuth: toggleIsAuth,
