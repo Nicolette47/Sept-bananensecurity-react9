@@ -5,8 +5,8 @@ import {AuthContext} from '../context/AuthContext';
 
 function SignIn() {
 
-    const {isAuth, login} = useContext(AuthContext);
-    console.log(isAuth);
+    const {state, login} = useContext(AuthContext);
+    console.log(state);
 
 
     function handleSubmit(e) {

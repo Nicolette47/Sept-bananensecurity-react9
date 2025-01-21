@@ -11,8 +11,8 @@ import {AuthContext} from './context/AuthContext';
 
 function App() {
 
-const {isAuth} = useContext(AuthContext);
-console.log(isAuth);
+const {state} = useContext(AuthContext);
+console.log(state);
 
 
     return (
@@ -23,7 +23,7 @@ console.log(isAuth);
                     <Route path="/" element={<Home/>}/>
                     <Route
                         path="/profile"
-                        element={isAuth ? <Profile/> : <Navigate to="/SignIn" />}
+                        element={state.isAuth ? <Profile/> : <Navigate to="/SignIn" />}
                         />
                     <Route path="/signin" element={<SignIn/>}/>
                     <Route path="/signup" element={<SignUp/>}/>

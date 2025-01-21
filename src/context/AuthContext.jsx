@@ -8,26 +8,35 @@ export const AuthContext = createContext({});
 
 export function AuthContextProvider({children}) {
 
-    const[isAuth, toggleIsAuth] = useState(false);
+    const[state, setState] = useState({
+        isAuth: false,
+        user: '',
+    });
 
     const navigate = useNavigate();
 
     function login() {
-        toggleIsAuth(true)
+        setState({
+            isAuth: true,
+            user: "nicolette"
+        })
         console.log("gebruiker is ingelogd");
         navigate('/profile');
     }
 
     function logout() {
-        toggleIsAuth(false)
+        setState ({
+            isAuth: false,
+            user: '',
+        })
         console.log("gebruiker is uitgelogd");
         navigate('/');
     }
 
 
     const data = {
-        isAuth: isAuth,
-        toggleIsAuth: toggleIsAuth,
+        state: state,
+        setState: setState,
         login: login,
         logout: logout,
     };
