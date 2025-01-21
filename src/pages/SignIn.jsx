@@ -21,7 +21,11 @@ function SignIn() {
                 molestias qui quo unde?</p>
 
             <form onSubmit={handleSubmit}>
+                <label htmlFor="login-emailfield">Emailadres:</label>
+                <input type="email" id="login-emailfield" name="loginemailadres"/>
 
+                <label htmlFor="login-passwordfield">Wachtwoord:</label>
+                <input type="password" id="login-passwordfield" name="loginwachtwoord"/>
 
                 <button type="submit">
                     Inloggen
