@@ -2,7 +2,7 @@ import {createContext, useState} from 'react';
 import {unstable_renderSubtreeIntoContainer} from "react-dom";
 import {useNavigate} from 'react-router-dom';
 
-export const AuthContext = createContext();
+export const AuthContext = createContext({});
 
 
 
